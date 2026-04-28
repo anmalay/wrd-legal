@@ -58,14 +58,7 @@ body {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
   text-decoration: none;
-}
-
-.brand-icon {
-  width: 27px;
-  height: 27px;
-  display: block;
 }
 
 .topbar {
@@ -198,6 +191,13 @@ li {
   color: #fff;
   text-decoration: none;
   transition: transform 160ms ease, background 160ms ease;
+}
+
+.button-link:visited,
+.button-link:link,
+.button-link:active {
+  color: #fff;
+  background: #171614;
 }
 
 .button-link:hover,
