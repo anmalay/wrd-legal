@@ -24,7 +24,11 @@
       <img src="./assets/app-store.svg" alt="Download on the App Store" width="170" height="50">
     </a>
 
-    <p class="hint" id="hint" hidden>Tap <span class="hint-dots">•••</span> above and choose “Open in browser”</p>
+    <p class="hint" id="hint" hidden>
+      Tap <span class="hint-dots">•••</span> above & choose <strong>“Open in browser”</strong>
+      <br>
+      <button type="button" class="copy-btn" id="copy-btn">Copy link to open in Safari</button>
+    </p>
 
     <div class="phone" aria-hidden="true">
       <div class="wall"></div>
@@ -64,21 +68,37 @@
 
   <script>
     (function () {
-      var HTTPS_URL = "https://apps.apple.com/app/id6760948982?ct=tiktok_bio";
-      var SCHEME_URL = "itms-apps://apps.apple.com/app/id6760948982?ct=tiktok_bio";
-      var store = document.getElementById("store");
       var hint = document.getElementById("hint");
+      var copyBtn = document.getElementById("copy-btn");
+      var ua = navigator.userAgent || "";
+      
+      var isTikTok = /TikTok|musical_ly|ByteLocale|ByteFullApp|trill/i.test(ua);
+      var isInApp = isTikTok || /FBAN|FBAV|Instagram|Snapchat|Line|MicroMessenger/i.test(ua);
 
-      store.addEventListener("click", function (e) {
-        if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
-        e.preventDefault();
-        window.location.href = SCHEME_URL;
-        setTimeout(function () {
-          if (document.visibilityState !== "visible") return;
-          hint.hidden = false;
-          window.location.href = HTTPS_URL;
-        }, 900);
-      });
+      if (isInApp && hint) {
+        hint.hidden = false;
+      }
+
+      if (copyBtn) {
+        copyBtn.addEventListener("click", function () {
+          var url = window.location.href;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function () {
+              copyBtn.textContent = "Copied to clipboard!";
+              setTimeout(function () { copyBtn.textContent = "Copy link to open in Safari"; }, 2000);
+            });
+          } else {
+            var input = document.createElement("input");
+            input.value = url;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand("copy");
+            document.body.removeChild(input);
+            copyBtn.textContent = "Copied to clipboard!";
+            setTimeout(function () { copyBtn.textContent = "Copy link to open in Safari"; }, 2000);
+          }
+        });
+      }
     })();
   </script>
 
