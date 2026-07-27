@@ -24,8 +24,6 @@
       <img src="./assets/app-store.svg" alt="Download on the App Store" width="170" height="50">
     </a>
 
-    <p class="hint" id="hint" hidden>Tap <span class="hint-dots">•••</span> above and choose “Open in browser”</p>
-
     <div class="phone" aria-hidden="true">
       <div class="wall"></div>
 
@@ -61,19 +59,6 @@
       </div>
     </div>
   </main>
-
-  <script>
-    (function () {
-      var hint = document.getElementById("hint");
-      var ua = navigator.userAgent || "";
-      var isTikTok = /TikTok|musical_ly|ByteLocale|ByteFullApp|trill/i.test(ua);
-      var isInApp = isTikTok || /FBAN|FBAV|Instagram|Snapchat|Line|MicroMessenger/i.test(ua);
-
-      if (isInApp && hint) {
-        hint.hidden = false;
-      }
-    })();
-  </script>
 
   <script src="./assets/lottie_canvas.min.js"></script>
   <script src="./assets/sentence_warp.js"></script>
