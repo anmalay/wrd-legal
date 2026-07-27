@@ -116,6 +116,21 @@ body {
   transform: scale(0.98);
 }
 
+.hint {
+  position: relative;
+  margin: calc(14 * var(--s)) 0 calc(-30 * var(--s));
+  max-width: calc(260 * var(--s));
+  font-family: var(--sf);
+  font-size: calc(13 * var(--s));
+  line-height: 1.35;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hint-dots {
+  letter-spacing: 0.1em;
+}
+
 .phone {
   flex: none;
   margin-top: calc(82.45 * var(--s));

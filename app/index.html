@@ -20,9 +20,11 @@
 
     <h1 class="title">Turn your lock&nbsp;<br>screen into&nbsp;<br>a language habit</h1>
 
-    <a class="store" href="https://apps.apple.com/app/id6760948982?ct=tiktok_bio">
+    <a class="store" id="store" href="https://apps.apple.com/app/id6760948982?ct=tiktok_bio">
       <img src="./assets/app-store.svg" alt="Download on the App Store" width="170" height="50">
     </a>
+
+    <p class="hint" id="hint" hidden>Tap <span class="hint-dots">•••</span> above and choose “Open in browser”</p>
 
     <div class="phone" aria-hidden="true">
       <div class="wall"></div>
@@ -59,6 +61,26 @@
       </div>
     </div>
   </main>
+
+  <script>
+    (function () {
+      var HTTPS_URL = "https://apps.apple.com/app/id6760948982?ct=tiktok_bio";
+      var SCHEME_URL = "itms-apps://apps.apple.com/app/id6760948982?ct=tiktok_bio";
+      var store = document.getElementById("store");
+      var hint = document.getElementById("hint");
+
+      store.addEventListener("click", function (e) {
+        if (!/iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
+        e.preventDefault();
+        window.location.href = SCHEME_URL;
+        setTimeout(function () {
+          if (document.visibilityState !== "visible") return;
+          hint.hidden = false;
+          window.location.href = HTTPS_URL;
+        }, 900);
+      });
+    })();
+  </script>
 
   <script src="./assets/lottie_canvas.min.js"></script>
   <script src="./assets/sentence_warp.js"></script>
