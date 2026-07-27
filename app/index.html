@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="refresh" content="0; url=https://apps.apple.com/app/id6760948982?ct=tiktok_bio">
+  <script>
+    window.location.replace("https://apps.apple.com/app/id6760948982?ct=tiktok_bio");
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#111111">
   <meta name="description" content="Turn your lock screen into a language habit. A new word every day, right on your lock screen.">
@@ -24,11 +28,7 @@
       <img src="./assets/app-store.svg" alt="Download on the App Store" width="170" height="50">
     </a>
 
-    <p class="hint" id="hint" hidden>
-      Tap <span class="hint-dots">•••</span> above & choose <strong>“Open in browser”</strong>
-      <br>
-      <button type="button" class="copy-btn" id="copy-btn">Copy link to open in Safari</button>
-    </p>
+    <p class="hint" id="hint" hidden>Tap <span class="hint-dots">•••</span> above and choose “Open in browser”</p>
 
     <div class="phone" aria-hidden="true">
       <div class="wall"></div>
@@ -69,35 +69,12 @@
   <script>
     (function () {
       var hint = document.getElementById("hint");
-      var copyBtn = document.getElementById("copy-btn");
       var ua = navigator.userAgent || "";
-      
       var isTikTok = /TikTok|musical_ly|ByteLocale|ByteFullApp|trill/i.test(ua);
       var isInApp = isTikTok || /FBAN|FBAV|Instagram|Snapchat|Line|MicroMessenger/i.test(ua);
 
       if (isInApp && hint) {
         hint.hidden = false;
-      }
-
-      if (copyBtn) {
-        copyBtn.addEventListener("click", function () {
-          var url = window.location.href;
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(url).then(function () {
-              copyBtn.textContent = "Copied to clipboard!";
-              setTimeout(function () { copyBtn.textContent = "Copy link to open in Safari"; }, 2000);
-            });
-          } else {
-            var input = document.createElement("input");
-            input.value = url;
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand("copy");
-            document.body.removeChild(input);
-            copyBtn.textContent = "Copied to clipboard!";
-            setTimeout(function () { copyBtn.textContent = "Copy link to open in Safari"; }, 2000);
-          }
-        });
       }
     })();
   </script>
