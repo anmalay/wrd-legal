@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="Turn your lock screen into a language habit. A new word every day, right on your lock screen.">
+  <meta property="og:title" content="wrd — Word of the Day Widget">
+  <meta property="og:description" content="Turn your lock screen into a language habit.">
+  <title>wrd — Turn your lock screen into a language habit</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="screen">
+    <div class="sky"></div>
+    <div class="sky-anim" id="sky-anim"></div>
+    <div class="veil"></div>
+
+    <span class="logo">wrd</span>
+
+    <h1 class="title">Turn your lock&nbsp;<br>screen into&nbsp;<br>a language habit</h1>
+
+    <a class="store" href="https://apps.apple.com/app/id6760948982?ct=tiktok_bio">
+      <img src="./assets/app-store.svg" alt="Download on the App Store" width="170" height="50">
+    </a>
+
+    <div class="phone" aria-hidden="true">
+      <div class="wall"></div>
+
+      <div class="statusbar">
+        <span class="statusbar-brand">wrd</span>
+        <span class="island"></span>
+        <span class="icons">
+          <svg width="13.284" height="8.856" viewBox="0 0 13.284 8.85598" fill="#EDEDED">
+            <path d="M7.37999 2.214C7.37999 1.80641 7.7104 1.476 8.11799 1.476H8.85598C9.26357 1.476 9.59398 1.80641 9.59398 2.214V8.11798C9.59398 8.52557 9.26357 8.85598 8.85598 8.85598H8.11799C7.7104 8.85598 7.37999 8.52557 7.37999 8.11798V2.214Z"/>
+            <path d="M11.07 0.737998C11.07 0.330413 11.4004 0 11.808 0H12.546C12.9536 0 13.284 0.330413 13.284 0.737999V8.11798C13.284 8.52557 12.9536 8.85598 12.546 8.85598H11.808C11.4004 8.85598 11.07 8.52557 11.07 8.11798V0.737998Z"/>
+            <path d="M3.68999 4.79699C3.68999 4.38941 4.02041 4.05899 4.42799 4.05899H5.16599C5.57358 4.05899 5.90399 4.38941 5.90399 4.79699V8.11798C5.90399 8.52557 5.57358 8.85598 5.16599 8.85598H4.42799C4.02041 8.85598 3.68999 8.52557 3.68999 8.11798V4.79699Z"/>
+            <path d="M0 6.64199C0 6.2344 0.330413 5.90399 0.737999 5.90399H1.476C1.88358 5.90399 2.214 6.2344 2.214 6.64199V8.11798C2.214 8.52557 1.88358 8.85598 1.476 8.85598H0.737999C0.330413 8.85598 0 8.52557 0 8.11798V6.64199Z"/>
+          </svg>
+          <svg width="12.546" height="8.731" viewBox="0 0 12.5459 8.73087" fill="#EDEDED">
+            <path d="M4.50977 6.5795C5.55763 5.67483 7.09277 5.67483 8.14063 6.5795C8.19334 6.62817 8.22414 6.6974 8.22559 6.76993C8.22693 6.84233 8.19908 6.91256 8.14844 6.96329L6.50782 8.65275C6.45972 8.70242 6.39362 8.73087 6.3252 8.73087C6.25683 8.73085 6.19163 8.70237 6.14356 8.65275L4.50196 6.96329C4.45137 6.91254 4.42343 6.84231 4.42481 6.76993C4.42631 6.69745 4.45708 6.62812 4.50977 6.5795ZM2.29297 4.55997C4.5505 2.41645 8.04709 2.41658 10.3047 4.55997C10.3557 4.61024 10.385 4.68002 10.3857 4.75235C10.3863 4.82443 10.3583 4.89355 10.3086 4.94474L9.36036 5.92325C9.26261 6.02315 9.10418 6.02539 9.00391 5.92814C8.26257 5.24297 7.29794 4.86362 6.29786 4.86368C5.29848 4.86418 4.33455 5.24341 3.59376 5.92814C3.49348 6.02523 3.33598 6.0231 3.23829 5.92325L2.29004 4.94474C2.24016 4.8936 2.21233 4.82451 2.2129 4.75235C2.21357 4.68003 2.24203 4.61023 2.29297 4.55997ZM0.0791072 2.54044C3.54173 -0.846814 9.00515 -0.846814 12.4678 2.54044C12.5178 2.59075 12.5455 2.66014 12.5459 2.73185C12.5462 2.80345 12.5192 2.87244 12.4697 2.92325L11.5195 3.90177C11.4217 4.00175 11.2633 4.00243 11.1641 3.90372C9.84482 2.62354 8.09371 1.90966 6.27344 1.90958C4.45311 1.90963 2.70217 2.62355 1.38282 3.90372C1.28354 4.00271 1.12415 4.0023 1.02637 3.90177L0.0771541 2.92325C0.027648 2.8723 -0.000456898 2.80263 5.62007e-06 2.73087C0.000587111 2.65929 0.0290697 2.59062 0.0791072 2.54044Z"/>
+          </svg>
+          <svg width="20.222" height="9.594" viewBox="0 0 20.222 9.59398" fill="none">
+            <path opacity="0.35" d="M2.95215 0.369141H15.5723C16.9987 0.369281 18.1553 1.52569 18.1553 2.95215V6.6416C18.1553 8.06806 16.9987 9.22447 15.5723 9.22461H2.95215C1.5256 9.22461 0.369141 8.06815 0.369141 6.6416V2.95215C0.369141 1.5256 1.5256 0.369141 2.95215 0.369141Z" stroke="#EDEDED" stroke-width="0.737999"/>
+            <path transform="translate(1.48 1.476)" d="M0 1.476C0 0.660828 0.660827 0 1.476 0H14.096C14.9112 0 15.572 0.660827 15.572 1.476V5.16599C15.572 5.98116 14.9112 6.64199 14.096 6.64199H1.476C0.660826 6.64199 0 5.98116 0 5.16599V1.476Z" fill="#EDEDED"/>
+            <path transform="translate(19.188 3.69)" opacity="0.4" d="M0 0V3.11461C0.626606 2.85082 1.03408 2.23717 1.03408 1.5573C1.03408 0.877437 0.626606 0.263789 0 0" fill="#EDEDED"/>
+          </svg>
+        </span>
+      </div>
+
+      <div class="clock">
+        <span class="clock-date">Monday, December 15</span>
+        <span class="clock-time">14:50</span>
+      </div>
+
+      <div class="word">
+        <span class="word-original">dire la verità</span>
+        <span class="word-translation">tell the truth</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="./assets/lottie_canvas.min.js"></script>
+  <script src="./assets/sentence_warp.js"></script>
+  <script>
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var sky = lottie.loadAnimation({
+        container: document.getElementById("sky-anim"),
+        renderer: "canvas",
+        loop: true,
+        autoplay: true,
+        animationData: window.skyAnimation,
+        rendererSettings: {
+          preserveAspectRatio: "xMidYMid slice",
+          clearCanvas: true,
+          dpr: Math.min(window.devicePixelRatio || 1, 2)
+        }
+      });
+
+      sky.addEventListener("DOMLoaded", function () {
+        document.getElementById("sky-anim").classList.add("is-ready");
+      });
+
+      window.addEventListener("resize", function () {
+        sky.resize();
+      });
+    }
+  </script>
+</body>
+</html>
