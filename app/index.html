@@ -2,40 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <script>
-    (function () {
-      var APP_STORE_URL = "https://apps.apple.com/app/id6760948982?ct=tiktok_bio";
-      var ua = navigator.userAgent || "";
-      var isTikTok = /TikTok|musical_ly|ByteLocale|ByteFullApp|trill/i.test(ua);
-      var isiOS = /iPhone|iPad|iPod/i.test(ua);
-      var isAndroid = /Android/i.test(ua);
-
-      if (isTikTok) {
-        if (isiOS) {
-          // Attempt 1: safari-https scheme handoff
-          var safariUrl = APP_STORE_URL.replace(/^https:/, "safari-https:");
-          window.location.href = safariUrl;
-
-          // Attempt 2: Blob breakout to Safari
-          setTimeout(function () {
-            try {
-              var html = '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=' + APP_STORE_URL + '"></head><body><script>window.location.href="' + APP_STORE_URL + '";<\/script></body></html>';
-              var blob = new Blob([html], { type: "text/html" });
-              var blobUrl = URL.createObjectURL(blob);
-              var a = document.createElement("a");
-              a.href = blobUrl;
-              a.rel = "noopener";
-              document.body.appendChild(a);
-              a.click();
-            } catch (e) {}
-          }, 400);
-        } else if (isAndroid) {
-          // Android Chrome intent breakout
-          window.location.href = "intent://apps.apple.com/app/id6760948982#Intent;scheme=https;package=com.android.chrome;end;";
-        }
-      }
-    })();
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#111111">
   <meta name="description" content="Turn your lock screen into a language habit. A new word every day, right on your lock screen.">
