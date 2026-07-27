@@ -62,6 +62,28 @@ body {
   background: rgba(20, 20, 20, 0.53);
 }
 
+.tiktok-notice {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin-bottom: calc(16 * var(--s));
+  padding: calc(10 * var(--s)) calc(14 * var(--s));
+  border-radius: calc(12 * var(--s));
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: var(--sf);
+  font-size: calc(13 * var(--s));
+  line-height: 1.35;
+  text-align: center;
+  color: #fff;
+}
+
+.tiktok-notice[hidden] {
+  display: none !important;
+}
+
 .logo,
 .title,
 .store,
